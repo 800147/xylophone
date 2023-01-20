@@ -25,24 +25,24 @@ const Form = () => __('form',
     enctype: 'text/plain'
   },
   [
-    __('label', { className: 'Form-Label', for: 'name' }, [ 'melody name' ]),
+    __('label', { className: 'Form-Label', htmlFor: 'name' }, [ 'melody name' ]),
     __('input', { className: 'Form-Field', value: name, name: 'name', id: 'name' }),
 
-    __('label', { className: 'Form-Label', for: 'keys' }, [ 'keys count' ]),
+    __('label', { className: 'Form-Label', htmlFor: 'keys' }, [ 'keys count' ]),
     __('input', { className: 'Form-Field', type: 'number', value: keys, name: 'keys', id: 'keys' }),
 
-    __('label', { className: 'Form-Label', for: 'schema' }, [ 'schema' ]),
+    __('label', { className: 'Form-Label', htmlFor: 'schema' }, [ 'schema' ]),
     __('textarea',
       {
         className: 'Form-Field Form-Field_textarea',
         name: 'schema',
         id: 'schema',
-        inputmode: 'numeric'
+        inputMode: 'numeric'
       },
       [ schema ]
     ),
 
-    __('label', { className: 'Form-Label', for: 'source' }, [ 'source url' ]),
+    __('label', { className: 'Form-Label', htmlFor: 'source' }, [ 'source url' ]),
     __('input',
       { className: 'Form-Field', type: 'url', value: source, name: 'source', id: 'source' }
     ),
@@ -50,6 +50,8 @@ const Form = () => __('form',
     __('button', { className: 'Form-Submit', type: 'submit' }, [ 'Submit' ])
   ]
 );
+
+document.createElement('label').formFor
 
 const onLoad = () => {
   const body = document.querySelector('body');
