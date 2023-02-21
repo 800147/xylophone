@@ -15,7 +15,11 @@ if (name) {
 
 const Key = key => __('div', { className: 'Key-N', style: `--index: ${key - 1}` }, [ key ]);
 
-const KeyRow = keyRow => __('div', { className: 'Keys-Key Key' }, keyRow.split('.').map(Key));
+const KeyRow = keyRow => __(
+  'div',
+  { className: 'Keys-Key Key' },
+  keyRow.split('.').filter(Boolean).map(Key)
+);
 
 const Form = () => __('form',
   {
