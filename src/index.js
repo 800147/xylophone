@@ -1,5 +1,5 @@
 import { __, appendChildren } from './el.js'
-import { urlParams } from './urlParams.js';
+import { getUrlParams } from './getUrlParams.js';
 
 const {
   name = '',
@@ -7,7 +7,7 @@ const {
   keys = 12,
   source = '',
   edit
-} = urlParams({ keys: Number, edit: Boolean });
+} = getUrlParams({ keys: Number, edit: Boolean });
 
 if (name) {
   document.title = `${name} — melody for xylophone`;
@@ -26,7 +26,6 @@ const Form = () => __('form',
     className: 'Form',
     action: './',
     method: 'GET',
-    enctype: 'text/plain'
   },
   [
     __('label', { className: 'Form-Label', htmlFor: 'name' }, [ 'melody name' ]),
@@ -54,8 +53,6 @@ const Form = () => __('form',
     __('button', { className: 'Form-Submit', type: 'submit' }, [ 'Submit' ])
   ]
 );
-
-document.createElement('label').formFor
 
 const onLoad = () => {
   const body = document.querySelector('body');

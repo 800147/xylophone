@@ -1,13 +1,21 @@
 :root {
   font-size: 16px;
-  --color: #111111;
-  --bg-color: white;
+  --color: #241f31;
+  --bg-color: #ffffff;
+  --key-color: #ffffff;
+  --key-bg-color: #77767b;
+  --gap-color: #ddd;
+  --link-color: #5e5c64;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color: #ebebeb;
-    --bg-color: black;
+    --color: #f6f5f4;
+    --bg-color: #000000;
+    --key-color: #000000;
+    --key-bg-color: #deddda;
+    --gap-color: #5e5c64;
+    --link-color: #77767b;
   }
 }
 
@@ -45,29 +53,30 @@ body {
   width: 100%;
   position: relative;
   height: 1.2em;
-  border-bottom: #ddd var(--margin) solid;
+  border-bottom: var(--gap-color) var(--margin) solid;
+  padding: 2px 0;
 }
 .Key:empty {
   height: 0;
+  padding: 0;
 }
 .Key:first-child {
-  border-top: #ddd var(--margin) solid;
+  border-top: var(--gap-color) var(--margin) solid;
 }
 .Key-N {
   position: absolute;
   width: var(--width);
-  top: 0;
   left: calc((var(--width) + var(--margin)) * var(--index));
   line-height: 1.2em;
   text-align: center;
-  background-color: #888;
-  color: white;
+  background-color: var(--key-bg-color);
+  color: var(--key-color);
   border-radius: 2px;
 }
 
 /* Link */
 .Link, .Link:active, .Link:hover, .Link:visited {
-  color: #888;
+  color: var(--link-color);
 }
 
 /* Form */
