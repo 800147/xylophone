@@ -50,7 +50,11 @@ const Form = () => __('form',
       { className: 'Form-Field', type: 'url', value: source, name: 'source', id: 'source' }
     ),
 
-    __('button', { className: 'Form-Submit', type: 'submit' }, [ 'Submit' ])
+    __('button', { className: 'Form-Submit', type: 'submit' }, [ 'Submit' ]),
+
+    __('p', { className: 'Form-Link' }, [
+      __('a', { href: `./about`, className: 'Link' }, [ 'about' ])
+    ])
   ]
 );
 
@@ -74,6 +78,10 @@ const onLoad = () => {
 
       __('p', {}, [
         __('a', { href: `${window.location.search}&edit=1`, className: 'Link' }, [ 'edit' ])
+      ]),
+
+      __('p', {}, [
+        __('a', { href: `./about`, className: 'Link' }, [ 'about' ])
       ])
     ]);
   }
