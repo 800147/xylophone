@@ -40,7 +40,8 @@ const Form = () => __('form',
         className: 'Form-Field Form-Field_textarea',
         name: 'schema',
         id: 'schema',
-        inputMode: 'numeric'
+        inputMode: 'numeric',
+        placeholder: '10,8,10,8,11,10,9,,5,5,5,6,7,8,8,8'
       },
       [ schema ]
     ),
